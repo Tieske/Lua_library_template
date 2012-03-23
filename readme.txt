@@ -8,7 +8,7 @@ Creating Lua libraries from scratch
 ===================================
 Create a new project and select; Visual C++, win32, win32 project
 In the wizard select 'DLL' and 'empty project'
-Add a new C file to the project (must be doen first, otherwise the
+Add a new C file to the project (must be done first, otherwise the
 C/C++ options won't show in VS2008)
 
 Open the new project properties (rightclick -> properties) and set
