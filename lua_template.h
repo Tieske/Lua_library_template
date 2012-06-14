@@ -1,5 +1,5 @@
-#ifndef my_lua_lib_h	// TODO: rename definition to a unique name
-#define my_lua_lib_h
+#ifndef lua_template_h	// TODO: rename definition to a unique name
+#define lua_template_h
 
 
 // Macro to export the API
