@@ -59,20 +59,21 @@ static int L_closeLib(lua_State *L) {
 }
 
 // Setup a userdata to provide a close method
-static int L_setupClose(lua_State *L) {
-	// create tracking userdata
+static void L_setupClose(lua_State *L) {
+	// create library tracking userdata
 	if (lua_newuserdata(L, sizeof(void*)) == NULL) {
-		return luaL_error(L, "Cannot allocate userdata");
+		luaL_error(L, "Cannot allocate userdata");
 	};
 	// Create a new metatable for the tracking userdata
 	luaL_newmetatable(L, "lua_template.MT");	// TODO: update name
-	// Add GC method
+	// Add GC metamethod
 	lua_pushstring(L, "__gc");
 	lua_pushcfunction(L, L_closeLib);
 	lua_settable(L, -3);
 	// Attach metatable to userdata
 	lua_setmetatable(L, -2);
-	return 0;
+	// pop userdata
+	lua_pop(L,1);
 }
 
 EXPORT_API	int luaopen_lua_template(lua_State *L){	// TODO: rename to 'luaopen_<LIBRARY_FILENAME>'
