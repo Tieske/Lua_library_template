@@ -1,5 +1,11 @@
 Template for a Lua libary
 =========================
+Library template providing a ready to go structure with a fill-in-the-blanks approach. 
+
+* can be used from Windows and *nix (API declaration).
+* has a default close/shutdown method
+
+
 UNIX
 -----
 * Copy and rename lua_template.c and lua_template.h files
