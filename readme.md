@@ -1,6 +1,6 @@
 Template for a Lua libary
 =========================
-Library template providing a ready to go structure with a fill-in-the-blanks approach. 
+Library template providing boilerplate code with a fill-in-the-blanks approach. 
 
 * can be used from Windows and *nix (API declaration).
 * has a default close/shutdown method
@@ -8,7 +8,9 @@ Library template providing a ready to go structure with a fill-in-the-blanks app
 
 UNIX
 -----
-* Copy and rename lua_template.c and lua_template.h files
+* Copy and rename the following files;
+    * lua_template.c
+    * lua_template.h
 * Check the TODO comments in the template
 
 WINDOWS - VISUAL STUDIO
@@ -19,13 +21,13 @@ Steps;
 
 * in your solution create a new project directory
 * copy the following files into that directory
-    * lua_template.vcxproj
     * lua_template.h
     * lua_template.c
-	* lua_template.vcxproj.filters (optional)
+    * lua_template.vcxproj
+    * lua_template.vcxproj.filters (optional)
 * Rename the 'lua_template.vcproj' 
 * In visual studio add the project to your solution
-* Rename lua_template.c and lua_template.h from within VS
+* Rename the .c and .h files from within VS
 * See the VS tasklist for the TODO's in the template.
 
 
