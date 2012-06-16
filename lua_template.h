@@ -3,10 +3,25 @@
 
 // TODO: Update module name here
 #define LTLIB_LIBRARYNAME    lua_template
+// TODO: uncomment line below to export the the module table as a Lua global
+//#define LTLIB_CREATEGLOBALTABLE
+
+/*
+** ===============================================================
+** Description
+** ===============================================================
+*/
+
+// TODO: add description
 
 
 
-// Generate required identifiers from the module name above
+/*
+** ===============================================================
+** Generate required identifiers from the module name above
+** ===============================================================
+*/
+
 #define LTLIB_STR_EXPAND(a) #a
 #define LTLIB_STR(a) LTLIB_STR_EXPAND(a)
 #define LTLIB_CONCAT_EXPAND(a,b)  a##b
@@ -17,8 +32,12 @@
 #define LTLIB_UDATAMT    LTLIB_STR( LTLIB_LIBRARYNAME##.lib_udata_mt)
 // name of luaopen function;					luaopen_lua_template
 #define LTLIB_OPENFUNC   LTLIB_CONCAT(luaopen_,LTLIB_LIBRARYNAME)
-// name of the global table for the module;		lua_template
-#define LTLIB_GLOBALNAME LTLIB_STR(LTLIB_LIBRARYNAME)
+// name of the global table for the module;		"lua_template" || NULL
+#ifdef LTLIB_CREATEGLOBALTABLE
+	#define LTLIB_GLOBALNAME LTLIB_STR(LTLIB_LIBRARYNAME)
+#else
+	#define LTLIB_GLOBALNAME NULL
+#endif
 
 // Macro to export the API
 #ifndef LTLIB_EXPORTAPI
@@ -28,6 +47,15 @@
 		#define LTLIB_EXPORTAPI extern
 	#endif
 #endif  
+
+
+/*
+** ===============================================================
+**  Other definitions
+** ===============================================================
+*/
+
+// TODO: Add definitions (optional)
 
 
 #endif	

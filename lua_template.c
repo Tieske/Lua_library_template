@@ -56,7 +56,7 @@ static const struct luaL_Reg LuaExportFunctions[] = {
 };
 
 // Open method called when Lua opens the library
-// On success; push module table on stack and return 1
+// On success; return 1
 // On error; push errorstring on stack and return 0
 static int L_openLib(lua_State *L) {
 

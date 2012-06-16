@@ -3,7 +3,8 @@ Template for a Lua libary
 Library template providing boilerplate code with a fill-in-the-blanks approach. 
 
 * can be used from Windows and *nix (API declaration).
-* has a default close/shutdown method
+* has default close/shutdown methods
+* optional global module table
 
 LICENSE
 -------
