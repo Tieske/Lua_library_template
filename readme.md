@@ -5,6 +5,9 @@ Library template providing boilerplate code with a fill-in-the-blanks approach.
 * can be used from Windows and *nix (API declaration).
 * has a default close/shutdown method
 
+LICENSE
+-------
+Copyright 2012, Thijs Schreijer. License is MIT/X11, the same as Lua 5.1 itself
 
 UNIX
 -----
@@ -25,7 +28,7 @@ Steps;
     * lua_template.c
     * lua_template.vcxproj
     * lua_template.vcxproj.filters (optional)
-* Rename the 'lua_template.vcproj' 
+* Rename the 'lua_template.vcxproj' (and the .filters file)
 * In visual studio add the project to your solution
 * Rename the .c and .h files from within VS
 * See the VS tasklist for the TODO's in the template.
