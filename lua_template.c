@@ -47,9 +47,10 @@ int L_somefunction(lua_State *L)
 
 // Structure with all functions made available to Lua
 static const struct luaL_Reg LuaExportFunctions[] = {
-	{"somefunction",L_somefunction},		
 
 	// TODO: add functions from 'exposed Lua API' section above
+	{"somefunction",L_somefunction},		
+
 
 	{NULL,NULL}
 };
@@ -90,6 +91,14 @@ static int L_closeLib(lua_State *L) {
 
 	return 0;
 }
+
+
+/*
+** ===============================================================
+** Core startup functionality, no need to change anything below
+** ===============================================================
+*/
+
 
 // Setup a userdata to provide a close method
 static void L_setupClose(lua_State *L) {
