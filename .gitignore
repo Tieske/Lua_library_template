@@ -7,3 +7,4 @@
 /ipch
 *.sdf
 *.user
+/udtype_example/Debug
