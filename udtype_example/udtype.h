@@ -3,8 +3,11 @@
 
 // TODO: Update module name here
 #define LTLIB_LIBRARYNAME    udtype
-// TODO: uncomment line below to export the the module table as a Lua global
-//#define LTLIB_CREATEGLOBALTABLE
+#if LUA_VERSION_NUM < 502
+	// TODO: uncomment line below to export the the module table as a 
+	// Lua global, only for 5.1, setting global tables deprecated in 5.2
+	//#define LTLIB_CREATEGLOBALTABLE
+#endif
 
 /*
 ** ===============================================================
@@ -50,7 +53,7 @@
 
 // Macro to export the API
 #ifndef LTLIB_EXPORTAPI
-	#ifdef WIN32
+	#ifdef _WIN32
 		#define LTLIB_EXPORTAPI __declspec(dllexport)
 	#else
 		#define LTLIB_EXPORTAPI extern

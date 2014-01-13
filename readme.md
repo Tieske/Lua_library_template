@@ -2,13 +2,14 @@ Template for a Lua libary
 =========================
 Library template providing boilerplate code with a fill-in-the-blanks approach. 
 
-* can be used from Windows and *nix (API declaration).
+* can be used from Windows and *nix (API declaration)
+* supports Lua 5.1 and Lua 5.2
 * has default close/shutdown methods
-* optional global module table
+* optional global module table (for Lua 5.1 only)
 
 LICENSE
 -------
-Copyright 2012, Thijs Schreijer. License is MIT/X11, the same as Lua 5.1 itself
+Copyright 2012-2014, Thijs Schreijer. License is MIT/X11, the same as Lua itself
 
 UNIX
 -----
@@ -21,6 +22,7 @@ WINDOWS - VISUAL STUDIO
 ----------------------------
 The template itself can simply be copied into a solution and then
 adapted for use.
+
 Steps;
 
 * in your solution create a new project directory
@@ -33,6 +35,10 @@ Steps;
 * In visual studio add the project to your solution
 * Rename the .c and .h files from within VS
 * See the VS tasklist for the TODO's in the template.
+
+Alternatively;
+* use `compile.bat` from the Visual Studio/WinSDK command shell
+(check the file for 'TODO' comments)
 
 
 Creating Lua libraries from scratch in VS

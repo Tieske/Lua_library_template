@@ -104,7 +104,11 @@ int L_type(lua_State *L)
 			} else {
 				// metatable isn't in our list already, so go look it up		// val, type, mytable, metatable, nil
 				while (lua_next(L, LUA_REGISTRYINDEX) != 0) {					// val, type, mytable, metatable, key, value
+#if LUA_VERSION_NUM < 502
 					if (lua_equal(L, -3, -1)) {
+#else
+					if (lua_compare(L, -3, -1, LUA_OPEQ)) {
+#endif        
 						// found it!											// val, type, mytable, metatable, metatablename, metatable
 						lua_remove(L, -3);										// val, type, mytable, metatablename, metatable
 						lua_pushvalue(L, -2);									// val, type, mytable, metatablename, metatable, metatablename
@@ -118,6 +122,9 @@ int L_type(lua_State *L)
 				lua_settop(L,2);												// val, type
 				return 1;
 			}
+		} else {
+			// It is a userdata, without a metatable
+			return 1;
 		}
 	} else {
 		return 1;	// just the regular type
@@ -234,8 +241,12 @@ LTLIB_EXPORTAPI	int LTLIB_OPENFUNC (lua_State *L){
 	}
 
 	// Export Lua API
-	luaL_register(L, LTLIB_GLOBALNAME, LuaExportFunctions);	
-
+	lua_newtable(L);
+#if LUA_VERSION_NUM < 502
+	luaL_register(L, LTLIB_GLOBALNAME, LuaExportFunctions);
+#else
+	luaL_setfuncs (L, LuaExportFunctions, 0);
+#endif        
 	return result;
 };
 

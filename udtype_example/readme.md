@@ -6,7 +6,7 @@ The first time a metatable is searched for it will be searched for in the regist
 
 LICENSE
 -------
-Copyright 2012, Thijs Schreijer. License is MIT/X11, the same as Lua 5.1 itself
+Copyright 2012-2014, Thijs Schreijer. License is MIT/X11, the same as Lua itself
 
 Example
 -------
