@@ -16,6 +16,7 @@ UNIX
 * Copy and rename the following files;
     * lua_template.c
     * lua_template.h
+    * lua_template-scm-1.rockspec
 * Check the TODO comments in the template
 
 WINDOWS - VISUAL STUDIO
@@ -29,6 +30,7 @@ Steps;
 * copy the following files into that directory
     * lua_template.h
     * lua_template.c
+    * lua_template-scm-1.rockspec
     * lua_template.vcxproj
     * lua_template.vcxproj.filters (optional)
 * Rename the 'lua_template.vcxproj' (and the .filters file)

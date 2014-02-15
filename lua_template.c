@@ -88,7 +88,9 @@ int L_somefunction(lua_State *L)
 	lua_pushstring(L, "Now running somefunction...");
 	lua_call(L, 1, 0);
 
-
+#ifndef NDEBUG
+	stackDump(L, "stack from somefunction()");
+#endif
 
 	return 0;	// number of return values on the Lua stack
 };
@@ -107,7 +109,7 @@ static const struct luaL_Reg LuaExportFunctions[] = {
 	{"somefunction",L_somefunction},		
 
 
-	{NULL,NULL}
+	{NULL,NULL}  // last entry; list terminator
 };
 
 // Open method called when Lua opens the library
@@ -133,7 +135,7 @@ static int L_openLib(lua_State *L) {
 
 // Close method called when Lua shutsdown the library
 // Note: check Lua os.exit() function for exceptions,
-// it will not always be called!
+// it will not always be called! Changed from Lua 5.1 to 5.2.
 static int L_closeLib(lua_State *L) {
 
 
@@ -191,18 +193,11 @@ static void L_openFailed(lua_State *L) {
 
 LTLIB_EXPORTAPI	int LTLIB_OPENFUNC (lua_State *L){	
 
-	int result = 0;
-
 	// Setup a userdata with metatable to create a close method
 	L_setupClose(L);
 
-	// call initialization code
-	result = L_openLib(L);
-	if (result == 0) 
-	{
-		// Init failed, so cleanup
-		L_openFailed(L);		// will not return
-	}
+	if (L_openLib(L) == 0)  // call initialization code
+		L_openFailed(L);    // Init failed, so cleanup, will not return
 
 	// Export Lua API
 	lua_newtable(L);
