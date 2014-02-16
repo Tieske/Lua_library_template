@@ -1,4 +1,4 @@
-package = "Lua_library_template"
+package = "lualibrarytemplate"
 version = "scm-1"
 
 source = {
@@ -22,8 +22,10 @@ dependencies = {
 }
 build = {
   type = "builtin",
-  modules = {},
-  copy_directories = { "../Lua_library_template" },
+  modules = {
+    ["lualibrarytemplate.dummy"] = "dummy.lua",
+  },
+  copy_directories = { "template" },
   install = {
     bin = {
       luacmodule = "luacmodule.lua",

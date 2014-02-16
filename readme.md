@@ -2,6 +2,7 @@ Template for a Lua libary
 =========================
 Library template providing boilerplate code with a fill-in-the-blanks approach. 
 
+* use single command to create a new working module
 * can be used from Windows and *nix (API declaration)
 * supports Lua 5.1 and Lua 5.2
 * has default close/shutdown methods
@@ -11,12 +12,32 @@ LICENSE
 -------
 Copyright 2012-2014, Thijs Schreijer. License is MIT/X11, the same as Lua itself
 
+DEPENDENCIES
+------------
+The commandline script requires the [luafilesystem]() and [datafile]() modules.
+The former will automatically be installed by LuaRocks, the latter hasn't been 
+released yet and can be installed using `sudo luarocks install https://raw2.github.com/hishamhm/datafile/master/datafile-scm-1.rockspec`.
+
+USAGE
+-----
+The simplest way to use the libary is by installing it through LuaRocks `sudo luarocks install lualibrarytemplate`.
+When done so a command line script is available to create an instant running c module.
+
+Here's how to create and test a new module 'testmod';
+````
+luacmodule testmod
+cd testmod
+sudo luarocks make
+lua -e "require([[testmod]]).somefunction([[one]], two, 3)"
+````
+Alternatively it can be used manually, see below for platform specifics
+
 UNIX
 -----
 * Copy and rename the following files;
-    * lua_template.c
-    * lua_template.h
-    * lua_template-scm-1.rockspec
+    * template/lua_template.c
+    * template/lua_template.h
+    * template/lua_template-scm-1.rockspec
 * Check the TODO comments in the template
 
 WINDOWS - VISUAL STUDIO
@@ -28,11 +49,11 @@ Steps;
 
 * in your solution create a new project directory
 * copy the following files into that directory
-    * lua_template.h
-    * lua_template.c
-    * lua_template-scm-1.rockspec
-    * lua_template.vcxproj
-    * lua_template.vcxproj.filters (optional)
+    * template/lua_template.h
+    * template/lua_template.c
+    * template/lua_template-scm-1.rockspec
+    * template/lua_template.vcxproj
+    * template/lua_template.vcxproj.filters (optional)
 * Rename the 'lua_template.vcxproj' (and the .filters file)
 * In visual studio add the project to your solution
 * Rename the .c and .h files from within VS
