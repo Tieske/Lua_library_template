@@ -7,21 +7,18 @@ Library template providing boilerplate code with a fill-in-the-blanks approach.
 * supports Lua 5.1 and Lua 5.2
 * has default close/shutdown methods
 * optional global module table (for Lua 5.1 only)
+* includes an SCM rockspec for use with LuaRocks
 
 LICENSE
 -------
 Copyright 2012-2014, Thijs Schreijer. License is MIT/X11, the same as Lua itself
 
-DEPENDENCIES
-------------
-The commandline script requires the [luafilesystem]() and [datafile]() modules.
-The former will automatically be installed by LuaRocks, the latter hasn't been 
-released yet and can be installed using `sudo luarocks install https://raw2.github.com/hishamhm/datafile/master/datafile-scm-1.rockspec`.
-
 USAGE
 -----
 The simplest way to use the libary is by installing it through LuaRocks `sudo luarocks install lualibrarytemplate`.
-When done so a command line script is available to create an instant running c module.
+If this fails due to a dependency on `datafile`, then that module hasn't been released 
+yet and should be installed manually using `sudo luarocks install https://raw2.github.com/hishamhm/datafile/master/datafile-scm-1.rockspec`.
+When done so a command line script `luacmodule` is available to create an instantly running c module.
 
 Here's how to create and test a new module 'testmod';
 ````
