@@ -27,6 +27,31 @@ cd testmod
 sudo luarocks make
 lua -e "require([[testmod]]).somefunction([[one]], two, 3)"
 ````
+This is the output on Windows;
+````
+C:\Temp>luacmodule testmod
+Succesfully generated project; testmod
+
+C:\Temp>cd testmod
+
+C:\Temp\testmod>luarocks make
+mingw32-gcc -O2 -c -o testmod.o -IC:/Program Files (x86)/Lua/5.1/include/ testmod.c
+mingw32-gcc -shared -o testmod.dll testmod.o C:/Program Files (x86)/Lua/5.1/bin/lua51.dll -lm
+Updating manifest for C:\Program Files (x86)\LuaRocks\systree/lib/luarocks/rocks
+
+testmod scm-1 is now built and installed in C:\Program Files (x86)\LuaRocks\systree (license: MIT)
+
+C:\Temp\testmod>lua -e "require([[testmod]]).somefunction([[one]], two, 3)"
+Now initializing module 'required' as:  testmod
+Now running somefunction...
+--------Start stack from somefunction()------------
+`one'  nil  3
+--------End Dump------------
+Now closing the Lua template library
+
+C:\Temp\testmod>
+````
+
 Alternatively it can be used manually, see below for platform specifics
 
 UNIX

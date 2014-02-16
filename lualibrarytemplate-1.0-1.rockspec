@@ -1,8 +1,9 @@
 package = "lualibrarytemplate"
-version = "scm-1"
+version = "1.0-1"
 
 source = {
-    url = "git://github.com/Tieske/Lua_library_template.git",
+    url = "https://github.com/Tieske/Lua_library_template/archive/version_1.0.tar.gz",
+    dir = "Lua_library_template-version_1.0"
 }
 description = {
    summary = "Lua template for C libraries",
@@ -13,7 +14,7 @@ description = {
       instantaneously, compiling and working, module.
    ]],
    homepage = "https://github.com/Tieske/Lua_library_template",
-   license = "MIT"
+   license = "MIT/X11"
 }
 dependencies = {
    "lua >= 5.1, < 5.2",
