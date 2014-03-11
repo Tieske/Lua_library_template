@@ -16,8 +16,6 @@ Copyright 2012-2014, Thijs Schreijer. License is MIT/X11, the same as Lua itself
 USAGE
 -----
 The simplest way to use the libary is by installing it through LuaRocks `sudo luarocks install lualibrarytemplate`.
-If this fails due to a dependency on `datafile`, then that module hasn't been released 
-yet and should be installed manually using `sudo luarocks install https://raw2.github.com/hishamhm/datafile/master/datafile-scm-1.rockspec`.
 When done so a command line script `luacmodule` is available to create an instantly running c module.
 
 Here's how to create and test a new module 'testmod';
