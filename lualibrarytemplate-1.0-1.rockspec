@@ -1,9 +1,9 @@
 package = "lualibrarytemplate"
-version = "1.0-1"
+version = "1.1-1"
 
 source = {
-    url = "https://github.com/Tieske/Lua_library_template/archive/version_1.0.tar.gz",
-    dir = "Lua_library_template-version_1.0"
+    url = "https://github.com/Tieske/Lua_library_template/archive/version_1.1.tar.gz",
+    dir = "Lua_library_template-version_1.1"
 }
 description = {
    summary = "Lua template for C libraries",
