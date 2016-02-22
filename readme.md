@@ -4,7 +4,7 @@ Library template providing boilerplate code with a fill-in-the-blanks approach.
 
 * use single command to create a new working module
 * can be used from Windows and *nix (API declaration)
-* supports Lua 5.1 and Lua 5.2
+* supports Lua 5.1 to Lua 5.3
 * has default close/shutdown methods
 * optional global module table (for Lua 5.1 only)
 * includes an SCM rockspec for use with LuaRocks
