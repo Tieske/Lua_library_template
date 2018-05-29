@@ -1,6 +1,6 @@
 #!/usr/bin/env lua
 local lfs = require("lfs")
-local datafile = require("lualibrarytemplate.dummy")
+local datafile = require("lualibrarytemplate.datafile")
 --local datafile = require("datafile")  -- luarocks agnostic resource loader
 local windows = (package.config:sub(1,1) == "\\")
 
@@ -13,7 +13,7 @@ local filehandler=function(source, target, pattern, handler)
   local m = 0
   local line = s:read("*l")
   while line do
-    if pattern and line:match(pattern) then 
+    if pattern and line:match(pattern) then
       line = handler(line)
       m = m + 1
     end

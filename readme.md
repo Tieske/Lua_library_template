@@ -1,6 +1,6 @@
 Template for a Lua libary
 =========================
-Library template providing boilerplate code with a fill-in-the-blanks approach. 
+Library template providing boilerplate code with a fill-in-the-blanks approach.
 
 * use single command to create a new working module
 * can be used from Windows and *nix (API declaration)
@@ -22,7 +22,7 @@ Here's how to create and test a new module 'testmod';
 ````
 luacmodule testmod
 cd testmod
-sudo luarocks make
+luarocks make
 lua -e "require([[testmod]]).somefunction([[one]], two, 3)"
 ````
 This is the output on Windows;
@@ -96,8 +96,8 @@ the following options;
   * C/C++, Code Generation, Runtime Libary;
       * Mutithreaded DLL (for VS2005 and before, default in 2008)
   * Linker, General, Additional Libary Directories;
-      * Add the path to the Lua library files, Lua for Windows; 
+      * Add the path to the Lua library files, Lua for Windows;
         "C:\Program Files\Lua\5.1\lib"
    * Linker, Input, Additional Dependencies;
-      * Add the lua51.lib files, Lua for Windows; 
+      * Add the lua51.lib files, Lua for Windows;
         "lua51.lib"
